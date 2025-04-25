@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.moraes</groupId>
 	<artifactId>cache-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>cache-service</name>
 	<description>Java project with practical examples of cache usage using Caffeine and Redis, demonstrating performance gains and control of data in memory</description>
 
