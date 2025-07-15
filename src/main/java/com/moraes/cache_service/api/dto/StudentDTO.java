@@ -19,4 +19,6 @@ public class StudentDTO {
 
     @Builder.Default
     private boolean withCache = Boolean.FALSE;
+
+    private String cacheName;
 }

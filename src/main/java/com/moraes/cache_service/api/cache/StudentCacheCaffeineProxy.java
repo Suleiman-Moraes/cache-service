@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.github.benmanes.caffeine.cache.Cache;
@@ -14,6 +15,7 @@ import com.moraes.cache_service.api.service.interfaces.IStudentService;
 
 import lombok.RequiredArgsConstructor;
 
+@Profile("caffeine")
 @RequiredArgsConstructor
 @Primary
 @Service
@@ -43,6 +45,7 @@ public class StudentCacheCaffeineProxy implements IStudentService {
         final String key = String.valueOf(id);
         StudentDTO studentDTO = cache.get(key, k -> service.getById(id));
         studentDTO.setWithCache(Boolean.TRUE);
+        studentDTO.setCacheName("Caffeine");
         return studentDTO;
     }
 

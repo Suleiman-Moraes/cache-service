@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cache-service
+
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
